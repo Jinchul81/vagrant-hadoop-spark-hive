@@ -11,10 +11,10 @@ Vagrant project to spin up a single virtual machine running:
 * MySQL 5.1.73
 * CentOS 6.5.3
 
-FYI, it contains performance tune up to download many packages internally.
+FYI, it contains performance tune up to download many packages rapidly.
 Yum repository of CentOS will be changed to one of KR mirrors
 if environment variable(i.e. LANG) of the host OS contains any ko or kr
-keyword. Please refer to Vagrantfile.
+keyword. Please refer to Vagrantfile and scripts/common.sh.
 
 The virtual machine will be running the following services:
 
@@ -28,7 +28,7 @@ The virtual machine will be running the following services:
 
 1. [Download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. [Download and install Vagrant](http://www.vagrantup.com/downloads.html).
-3. Run ```vagrant box add centos65 https://github.com/2creatives/vagrant-centos/releases/download/v6.5.1/centos65-x86_64-20131205.box```
+3. Run ```vagrant box add centos65 https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box```
 4. Cloning HEAD of this repository
 5. In your terminal change your directory into the project directory (i.e. `cd vagrant-hadoop-spark-hive`).
 6. Run ```vagrant up``` to create the VM.
@@ -73,8 +73,8 @@ $ /usr/local/spark/sbin/start-history-server.sh
 
 # TODO
 
-Supports HBase
-Supports Hadoop clustering
+* Supports HBase
+* Supports Hadoop clustering
 
 # More advanced setup
 
