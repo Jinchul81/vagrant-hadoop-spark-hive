@@ -2,8 +2,7 @@ Vagrant.require_version ">= 1.8.0"
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-#    i = 1
-    i = 2
+    i = 1
     config.vm.define "node#{i}" do |node|
         node.vm.box = "centos65"
         node.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"

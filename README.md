@@ -43,7 +43,7 @@ Here are some useful links to navigate to various UI's:
 * HDFS: (http://10.211.55.101:50070/dfshealth.html)
 * Spark history server: (http://10.211.55.101:18080)
 * Spark context UI (if a Spark context is running): (http://10.211.55.101:4040)
-** Currently Spark context UI seems not to work. Let me look into this.
+  * Currently Spark context UI seems not to work. Let me look into this.
 
 # Validating your virtual machine setup
 
