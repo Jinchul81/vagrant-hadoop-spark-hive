@@ -9,7 +9,7 @@ function installLocalJava {
 
 function installRemoteJava {
 	echo "install open jdk"
-	yum install -y java-1.8.0-openjdk.x86_64
+	yum install -y java-1.8.0-openjdk-devel
 }
 
 function setupJava {
@@ -17,7 +17,7 @@ function setupJava {
 	if resourceExists $JAVA_ARCHIVE; then
 		ln -s /usr/local/jdk1.8.0_51 /usr/local/java
 	else
-		ln -s /usr/lib/jvm/jre /usr/local/java
+		ln -s /usr/lib/jvm/java /usr/local/java
 	fi
 }
 

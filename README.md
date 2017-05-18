@@ -5,9 +5,16 @@ Vagrant for Hadoop, Spark and Hive
 
 Vagrant project to spin up a single virtual machine running:
 
-* Hadoop 2.7.2
-* Hive 1.2.1
-* Spark 1.6.0
+* Hadoop 2.8.0
+* Hive 2.1.1
+* Spark 2.1.1
+* MySQL 5.1.73
+* CentOS 6.5.3
+
+FYI, it contains performance tune up to download many packages internally.
+Yum repository of CentOS will be changed to one of KR mirrors
+if environment variable(i.e. LANG) of the host OS contains any ko or kr
+keyword. Please refer to Vagrantfile.
 
 The virtual machine will be running the following services:
 
@@ -15,14 +22,15 @@ The virtual machine will be running the following services:
 * YARN ResourceManager + JobHistoryServer + ProxyServer
 * Hive metastore and server2
 * Spark history server
+* MySQL is used for HIVE metastore db
 
 # Getting Started
 
 1. [Download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. [Download and install Vagrant](http://www.vagrantup.com/downloads.html).
 3. Run ```vagrant box add centos65 https://github.com/2creatives/vagrant-centos/releases/download/v6.5.1/centos65-x86_64-20131205.box```
-4. Go to [releases](https://github.com/alexholmes/vagrant-hadoop-spark-hive/releases) and download and extract the latest source of this project.
-5. In your terminal change your directory into the project directory (i.e. `cd vagrant-hadoop-spark-hive-<version>`).
+4. Cloning HEAD of this repository
+5. In your terminal change your directory into the project directory (i.e. `cd vagrant-hadoop-spark-hive`).
 6. Run ```vagrant up``` to create the VM.
 7. Execute ```vagrant ssh``` to login to the VM.
 
@@ -35,6 +43,7 @@ Here are some useful links to navigate to various UI's:
 * HDFS: (http://10.211.55.101:50070/dfshealth.html)
 * Spark history server: (http://10.211.55.101:18080)
 * Spark context UI (if a Spark context is running): (http://10.211.55.101:4040)
+** Currently Spark context UI seems not to work. Let me look into this.
 
 # Validating your virtual machine setup
 
@@ -57,6 +66,15 @@ $ /usr/local/spark/sbin/start-history-server.sh
 
 ```
 
+# Remaining issues
+
+1. Cannot access to Spark context UI
+2. In VALIDATING.md, a simple example does not work on Spark CLI.
+
+# TODO
+
+Supports HBase
+Supports Hadoop clustering
 
 # More advanced setup
 
@@ -70,4 +88,4 @@ The file [DEVELOP.md](DEVELOP.md) contains some tips for developers.
 # Credits
 
 This project is based on the great work carried out at
-(https://github.com/vangj/vagrant-hadoop-2.4.1-spark-1.0.1).
+(https://github.com/alexholmes/vagrant-hadoop-spark-hive).

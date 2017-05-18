@@ -26,6 +26,12 @@ function installHive {
 	mkdir /usr/local/hive/logs /usr/local/hive/derby/
 }
 
+function installMysqlConnector {
+	echo "install connector of mysql to hive"
+	yum install -y mysql-connector-java
+	ln -s /usr/share/java/mysql-connector-java.jar ${HIVE_HOME}/lib/
+}
+
 function setupHive {
 	echo "copying over hive configuration file"
 	cp -f $HIVE_RES_DIR/* $HIVE_CONF
@@ -48,6 +54,7 @@ function runHiveServices {
 echo "setup hive"
 
 installHive
+installMysqlConnector
 setupHive
 setupEnvVars
 runHiveServices

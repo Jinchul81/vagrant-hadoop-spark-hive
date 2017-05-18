@@ -39,12 +39,25 @@ function createSSHKey {
 
 function setupUtilities {
     # so the `locate` command works
-    yum install -y mlocate
+    yum install -y mlocate vim screen
     updatedb
+}
+
+function replaceYumRepo {
+	echo "use KR Yum repository"
+	mv ${YUM_REPO_DIR} ${YUM_REPO_DIR}.ori
+	mkdir ${YUM_REPO_DIR}
+	cp ${CUSTOMIZED_REPO} ${YUM_REPO_DIR}/
+	yum repolist
 }
 
 echo "setup centos"
 disableFirewall
+
+if [ ${IS_KR} ]
+then
+	replaceYumRepo
+fi
 
 echo "setup centos hosts file"
 setupHosts

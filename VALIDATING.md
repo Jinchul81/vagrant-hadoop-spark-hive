@@ -54,9 +54,16 @@ Next launch the interactive Spark shell.
     spark-shell --master yarn-client
 
 Run word count in Spark.
+* FYI, the following example seems not to work now. It shows some exceptions. Let me look into this.
 
     // enter paste mode
     :paste
+    import org.apache.spark.SparkContext
+    import org.apache.spark.SparkContext._
+    import org.apache.spark.SparkConf
+
+    val conf = new SparkConf().setAppName("Simple Application")
+    val sc = new SparkContext(conf)
     sc.textFile("hdfs:///user/vagrant/wordcount-input/hello.txt")
        .flatMap(line => line.split(" "))
        .map(word => (word, 1))
