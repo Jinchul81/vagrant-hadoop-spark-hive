@@ -54,7 +54,7 @@ Next launch the interactive Spark shell.
     spark-shell --master yarn-client
 
 Run word count in Spark.
-* FYI, the following example seems not to work now. It shows some exceptions. Let me look into this.
+FYI, the following example seems not to work now. It shows some exceptions. Let me look into this.
 
     // enter paste mode
     :paste
