@@ -16,6 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           s.inline = "echo HOST_LANG=$1 > /etc/profile.d/host_lang.sh"
           s.args = "#{ENV['LANG']}"
         end
+        node.vm.provision "shell", path: "scripts/prepare.sh"
         node.vm.provision "shell", path: "scripts/setup-centos.sh"
         node.vm.provision "shell", path: "scripts/setup-java.sh"
         node.vm.provision "shell", path: "scripts/setup-hadoop.sh"
