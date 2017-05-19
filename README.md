@@ -11,10 +11,13 @@ Vagrant project to spin up a single virtual machine running:
 * MySQL 5.1.73
 * CentOS 6.5.3
 
-FYI, it contains performance tune up to download many packages rapidly.
+It contains performance tune up to download many packages rapidly.
 Yum repository of CentOS will be changed to one of KR mirrors
 if environment variable(i.e. LANG) of the host OS contains any ko or kr
 keyword. Please refer to Vagrantfile and scripts/common.sh.
+
+FYI, the elapsed time for the installation takes roughly under 4 minutes
+using a local mirror.
 
 The virtual machine will be running the following services:
 
