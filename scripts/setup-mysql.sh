@@ -14,6 +14,7 @@ function setupMysql {
 	chkconfig mysqld on
 	chkconfig --list mysqld
 	mysql -u root < ${HIVE_SQL}
+	mysql -u root < ${SPRING_BATCH_SQL}
 	# Required path change due to the sql file loading internally 
 	cd ${HIVE_MYSQL_DIR}
 	mysql -u root hive_metastore_db < ${HIVE_SCHEMA}

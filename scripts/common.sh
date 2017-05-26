@@ -20,6 +20,7 @@ JAVA_ARCHIVE=jdk-8u51-linux-x64.gz
 # mysql
 MYSQL_VERSION=mysql-server-5.1.73
 HIVE_SQL=${VAGRANT_SCRIPTS}/hive.sql
+SPRING_BATCH_SQL=${VAGRANT_SCRIPTS}/spring-batch.sql
 HIVE_MYSQL_DIR=/usr/local/hive/scripts/metastore/upgrade/mysql
 HIVE_SCHEMA=hive-schema-2.1.0.mysql.sql
 
